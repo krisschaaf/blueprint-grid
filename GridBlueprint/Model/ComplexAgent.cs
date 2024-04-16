@@ -40,7 +40,7 @@ public class ComplexAgent : IAgent<GridLayer>, IPositionable
     public void Tick()
     {
         // Chooses random state if trip is no longer in progress. Comment this out if the agent should keep its initial state.
-        _state = RandomlySelectNewState();
+        //_state = RandomlySelectNewState();
         
         if (_state == AgentState.MoveRandomly)
         {
@@ -142,7 +142,8 @@ public class ComplexAgent : IAgent<GridLayer>, IPositionable
         if (!_tripInProgress)
         {
             // Explore nearby grid cells based on their values
-            _goal = FindRoutableGoal(MaxTripDistance);
+            //_goal = FindRoutableGoal(MaxTripDistance);
+            _goal = new Position(37.0, 17.0);
             _path = _layer.FindPath(Position, _goal).GetEnumerator();
             _tripInProgress = true;
         }
